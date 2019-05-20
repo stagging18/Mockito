@@ -13,7 +13,7 @@ import com.in28minutes.data.api.TodoService;
 
 public class TodoBusinessImplMockTest {
 
-	@Test
+	@Test(expected=Exception.class)
 	public void testRetrieveTodosRelatedToSpring_UsingMock() {
 		
 		TodoService todoServiceMock = mock(TodoService.class);
@@ -32,7 +32,7 @@ public class TodoBusinessImplMockTest {
 	public void testRetrieveTodosRelatedToSpring_UsingMock_EmptyList() {
 		
 		TodoService todoServiceMock = mock(TodoService.class);
-		List<String> todosList = Arrays.asList();
+		List<String> todosList = Arrays.asList("Learn Spring MVC", "Learn Spring", "Learn to Dance");
 		
 		when(todoServiceMock.retrieveTodos("Dummy")).thenReturn(todosList);
 		
