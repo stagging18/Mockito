@@ -5,7 +5,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
-
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 
@@ -24,6 +24,6 @@ public class JUnitTest {
 		
 		Employee employee = empList.stream().filter(e->e != null).filter(e1->e1.getSalary()>10000.0).findFirst().orElse(null);
 		
-		assertEquals(employee.getSalary(), new Double(200000));
+		assertEquals(new Double(100000), employee.getSalary());
 	}
 }
